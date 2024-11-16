@@ -13,6 +13,6 @@ def validUTF8(data):
         Boolean denoting if all are valid utf-8 encodings
     """
     for number in data:
-        if (number >> 8) != 0:
+        if (number >> 7) != 0:
             return False            
     return True
