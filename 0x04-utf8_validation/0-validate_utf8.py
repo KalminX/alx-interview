@@ -3,6 +3,7 @@
     represents a valid UTF-8 encoding
 """
 
+
 def validUTF8(data):
     """Return True if all data elements are valid utf-8 strings
 
@@ -14,5 +15,5 @@ def validUTF8(data):
     """
     for number in data:
         if (number >> 7) != 0:
-            return False            
+            return False
     return True
