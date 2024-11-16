@@ -14,7 +14,7 @@ def validUTF8(data):
     """
     num = True
     for number in data:
-        if (number >> 7) == 0:
+        if (number >> 8) == 0:
             num = True
         else:
             num = False
