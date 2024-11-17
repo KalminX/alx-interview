@@ -15,19 +15,20 @@ def validUTF8(data):
     """
     num_bytes = 0
     for num in data:
+        num = num & 0xff
         if num_bytes == 0:
-            if num & 0xf0 == 0x80:
-                return False
+            if num & 0x80 == 0x00:
+                continue
             elif num & 0xf8 == 0xf0:
                 num_bytes = 4
             elif num & 0xf0 == 0xe0:
                 num_bytes = 3
-            elif num & 0xf0 == 0xc0:
+            elif num & 0xe0 == 0xc0:
                 num_bytes = 2
             else:
                 num_bytes = 1
         else:
-            if num & 0xf0 != 0x80:
+            if (num & 0xc0) != 0x80:
                 return False
         num_bytes -= 1
     return num_bytes == 0
