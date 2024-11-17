@@ -26,7 +26,7 @@ def validUTF8(data):
             elif num & 0xe0 == 0xc0:
                 num_bytes = 2
             else:
-                num_bytes = 1
+                return False
         else:
             if (num & 0xc0) != 0x80:
                 return False

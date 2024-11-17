@@ -27,5 +27,5 @@ data = [467, 133, 108]  # Expected output: False
 print(validUTF8(data))
 
 # Test case: Valid 4-byte UTF-8 character (repeated)
-data = [240, 188, 128, 167]  # Expected output: True
+data = [250, 145, 145, 145, 145]  # Expected output: True
 print(validUTF8(data))
